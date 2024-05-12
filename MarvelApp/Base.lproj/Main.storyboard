@@ -1,24 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aAj-4T-x3m">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="oIA-fj-QPH">
+            <objects>
+                <viewController id="aAj-4T-x3m" customClass="StartViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X2Z-PQ-NMT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="100151_MT_Marvel" translatesAutoresizingMaskIntoConstraints="NO" id="4eh-7j-Kxy">
+                                <rect key="frame" x="50" y="99" width="293" height="228"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dH-sR-4ZF">
+                                <rect key="frame" x="50" y="395" width="88" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Lista Personajes">
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="list" id="3AT-vk-Wf1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rid-uv-0G6">
+                                <rect key="frame" x="255" y="424" width="88" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Lista Favoritos">
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="fav" id="a4d-MR-vRd"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data provided by Marvel. © 2024 MARVEL" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1GP-MY-wyd">
+                                <rect key="frame" x="15" y="726" width="363" height="62"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="nvp-zi-Fqs"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pDB-lB-ciK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pDB-lB-ciK" firstAttribute="bottom" secondItem="4eh-7j-Kxy" secondAttribute="bottom" constant="491" id="2Vy-Q6-oQe"/>
+                            <constraint firstItem="pDB-lB-ciK" firstAttribute="trailing" secondItem="1GP-MY-wyd" secondAttribute="trailing" constant="15" id="EUi-bb-Y8W"/>
+                            <constraint firstItem="pDB-lB-ciK" firstAttribute="bottom" secondItem="1GP-MY-wyd" secondAttribute="bottom" constant="30" id="PBc-w9-edo"/>
+                            <constraint firstItem="pDB-lB-ciK" firstAttribute="trailing" secondItem="4eh-7j-Kxy" secondAttribute="trailing" constant="50" id="Xt0-l9-mff"/>
+                            <constraint firstItem="1GP-MY-wyd" firstAttribute="leading" secondItem="pDB-lB-ciK" secondAttribute="leading" constant="15" id="bia-DA-aUB"/>
+                            <constraint firstItem="4eh-7j-Kxy" firstAttribute="top" secondItem="pDB-lB-ciK" secondAttribute="top" constant="40" id="mTD-lw-KeS"/>
+                            <constraint firstItem="4eh-7j-Kxy" firstAttribute="leading" secondItem="pDB-lB-ciK" secondAttribute="leading" constant="50" id="tME-0X-lKJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hypertext" destination="1GP-MY-wyd" id="j9i-nj-uIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jln-7y-WQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-605.3435114503817" y="4.9295774647887329"/>
+        </scene>
+        <!--Character Detail Controller-->
+        <scene sceneID="2bW-76-PWk">
+            <objects>
+                <viewController id="kVk-B9-AdI" customClass="CharacterDetailController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KlX-nC-W4w">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVw-V8-end">
+                                <rect key="frame" x="303.33333333333331" y="20" width="69.666666666666686" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X"/>
+                                <connections>
+                                    <action selector="returnView:" destination="kVk-B9-AdI" eventType="touchUpInside" id="yKQ-9W-8cP"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kbw-eV-hw6">
+                                <rect key="frame" x="111.66666666666669" y="40" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="blW-fG-aHo"/>
+                                    <constraint firstAttribute="width" constant="170" id="oD3-wI-4cE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBg-DW-j3Z">
+                                <rect key="frame" x="0.0" y="270" width="393" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSd-0B-62H">
+                                <rect key="frame" x="0.0" y="331" width="393" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrp-qa-j3e">
+                                <rect key="frame" x="0.0" y="392" width="393" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErG-ni-hGx">
+                                <rect key="frame" x="113" y="482" width="168" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Agregar a favoritos"/>
+                                <connections>
+                                    <action selector="btnFav:" destination="kVk-B9-AdI" eventType="touchUpInside" id="5v9-NN-KC2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1e9-Kl-ty3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1e9-Kl-ty3" firstAttribute="trailing" secondItem="oVw-V8-end" secondAttribute="trailing" constant="20" id="A4H-3k-CC9"/>
+                            <constraint firstItem="Kbw-eV-hw6" firstAttribute="centerX" secondItem="KlX-nC-W4w" secondAttribute="centerX" id="Ahk-0U-08w"/>
+                            <constraint firstItem="1e9-Kl-ty3" firstAttribute="trailing" secondItem="dBg-DW-j3Z" secondAttribute="trailing" id="Axq-wj-p72"/>
+                            <constraint firstItem="lrp-qa-j3e" firstAttribute="leading" secondItem="1e9-Kl-ty3" secondAttribute="leading" id="FqU-4V-ctX"/>
+                            <constraint firstItem="Kbw-eV-hw6" firstAttribute="top" secondItem="1e9-Kl-ty3" secondAttribute="top" constant="40" id="GxT-cG-1of"/>
+                            <constraint firstItem="lSd-0B-62H" firstAttribute="leading" secondItem="1e9-Kl-ty3" secondAttribute="leading" id="IvR-oR-ogi"/>
+                            <constraint firstItem="lSd-0B-62H" firstAttribute="top" secondItem="dBg-DW-j3Z" secondAttribute="bottom" constant="40" id="KcB-wn-vX0"/>
+                            <constraint firstItem="lrp-qa-j3e" firstAttribute="top" secondItem="lSd-0B-62H" secondAttribute="bottom" constant="40" id="cHp-Ac-IfT"/>
+                            <constraint firstItem="1e9-Kl-ty3" firstAttribute="trailing" secondItem="lrp-qa-j3e" secondAttribute="trailing" id="eXM-MH-bcq"/>
+                            <constraint firstItem="oVw-V8-end" firstAttribute="top" secondItem="1e9-Kl-ty3" secondAttribute="top" constant="20" id="hIj-sN-8ED"/>
+                            <constraint firstItem="dBg-DW-j3Z" firstAttribute="top" secondItem="Kbw-eV-hw6" secondAttribute="bottom" constant="60" id="pU2-ct-o6a"/>
+                            <constraint firstItem="1e9-Kl-ty3" firstAttribute="trailing" secondItem="lSd-0B-62H" secondAttribute="trailing" id="qcj-b0-NeC"/>
+                            <constraint firstItem="dBg-DW-j3Z" firstAttribute="leading" secondItem="1e9-Kl-ty3" secondAttribute="leading" id="tnh-4G-BCf"/>
+                            <constraint firstItem="oVw-V8-end" firstAttribute="leading" secondItem="Kbw-eV-hw6" secondAttribute="trailing" constant="21.666666666666742" id="vYE-mX-xBm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="lSd-0B-62H" id="Qtb-du-IW8"/>
+                        <outlet property="nameLabel" destination="dBg-DW-j3Z" id="KKC-iI-cbd"/>
+                        <outlet property="thumbnailImage" destination="Kbw-eV-hw6" id="A3D-gB-2QS"/>
+                        <outlet property="urlLabel" destination="lrp-qa-j3e" id="8Gt-xe-rhJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ze-h1-fyc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="51"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6dq-Cw-oyB">
-                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <rect key="frame" x="16" y="0.0" width="361" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4Gb-CZ-dhn">
                                     <size key="itemSize" width="150" height="200"/>
@@ -69,18 +215,31 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3v-FG-CWg">
+                                <rect key="frame" x="187.66666666666666" y="42" width="35.333333333333343" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="X"/>
+                                <connections>
+                                    <action selector="returnView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AZA-kF-75f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T3v-FG-CWg" secondAttribute="trailing" constant="170" id="3NU-sj-ccx"/>
                             <constraint firstItem="6dq-Cw-oyB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Eab-Cf-iMv"/>
+                            <constraint firstItem="T3v-FG-CWg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="OlC-7t-Cv3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6dq-Cw-oyB" secondAttribute="trailing" constant="16" id="TR8-dQ-eQa"/>
+                            <constraint firstItem="T3v-FG-CWg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="ThD-qc-FaO"/>
                             <constraint firstItem="6dq-Cw-oyB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hNT-Yk-wpT"/>
                             <constraint firstItem="6dq-Cw-oyB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xeT-d5-Kdi"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5Ot-hF-92U"/>
                     <connections>
                         <outlet property="characterCollectionView" destination="6dq-Cw-oyB" id="boJ-jT-A67"/>
+                        <segue destination="kVk-B9-AdI" kind="showDetail" identifier="detail" id="uAt-wS-c7K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,9 +247,19 @@
             <point key="canvasLocation" x="139.69465648854961" y="4.9295774647887329"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3AT-vk-Wf1"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="100151_MT_Marvel" width="768" height="518"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
